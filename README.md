@@ -29,7 +29,7 @@ persons: 4
 ```
 
 #### Format
-```[title]```
+``` [title] ```
 Title of recipe, title can contain any unicode letters including ',- and whitespaces
 
 ```variable: value```
