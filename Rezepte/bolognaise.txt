@@ -1,0 +1,33 @@
+[Bolognaise]
+time: 1h
+device: Pfanne
+persons: 4
+
+>2.0 Zwiebel/Zwiebeln
+hacken
+
+>1.0 EL Öl
+erhitzen, Zwiebeln dünsten
+
+>500.0 g Rindshack
+zugeben, braten bis schön braun
+
+>800.0 g Stangensellerie
+> Karotten
+waschen, schälen, kleinschneiden, zugeben
+
+>1.0 Bouillonwürfel
+zugeben
+
+>200 ml Wein
+ablöschen
+
+>1.0 Dose Pelati
+zugeben
+
+(30 Minuten
+auf kleiner Stufe köcheln lassen, in der Hälfte der Kochzeit evtl.
+
+>1.0 EL  Tomatenmark
+zugeben
+

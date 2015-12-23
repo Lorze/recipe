@@ -1,0 +1,23 @@
+[Picata]
+time: 1h
+device: Bratpfanne
+persons: 4
+
+>4.0 Plätzli
+mit
+
+> Salz
+> Pfeffer
+> Paprika
+würzen, in
+
+> Mehl
+wenden
+
+>2.0 Ei/Eier
+>1.0 EL Mehl
+>2.0 EL Parmesan
+zu einer dickflüssigem Masse vermischen, Plätzli durch den Teig ziehen
+
+(8 Minuten
+braten

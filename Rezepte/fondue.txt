@@ -1,0 +1,26 @@
+[Fondue]
+time: 1h
+device: Caquelon
+persons: 4
+
+>  Caquelon
+mit
+
+> Knoblauchzehe
+ausreiben
+
+>2.0-4.0 TL Maizena
+in
+
+>300.0-400.0 ml Weisswein
+auflösen, mit
+
+>1.0 TL Zitronensaft
+>600.0-800.0 g Käse
+in das Caquelon geben, unter stetigem Rühren langsam aufkochen
+
+> Kirsch
+> Pfeffer
+> Muskatnuss
+nach Geschmack würzen.
+

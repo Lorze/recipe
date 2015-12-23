@@ -1,0 +1,25 @@
+[Estragonpoulet]
+time: 0.5h
+device: Bratpfanne
+persons: 4
+
+>4.0 Pouletbrust/Pouletbrüste
+auftauen, mit
+
+> Salz
+> Pfeffer
+> Paprika
+würzen
+
+>1.0 EL Öl
+anbraten bis braun
+
+>0.1 l Weisswein
+ablöschen
+
+>0.33 Glas Estragon 
+zugeben
+
+>0.1 l Rahm
+5 Minuten vor Schluss zugeben
+

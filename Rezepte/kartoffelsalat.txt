@@ -1,0 +1,22 @@
+[Kartoffelsalat]
+time: 1h
+device: Topf mit Salzwasser
+persons: 4
+
+>1.0 kg Kartoffeln
+in Scheiben schneiden, in kochendem Salzwasser garen
+
+>2.0 EL Zitronenschale
+>1.0 EL grobkörniger Senf
+>125.0 g Mayonnaise
+>2.0 EL Zitronensaft
+> Salz
+> Pfeffer
+zu einem Dressing verrühren, mit Kartoffeln mischen.
+
+>50.0 g Rucola
+schneiden und zugeben
+
+> Alternativ
+kann die Mayonnaise auch durch verschiedene Milchprodukte ersetzt werden
+

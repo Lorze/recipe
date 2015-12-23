@@ -1,0 +1,25 @@
+[Käsekuchen]
+time: 1h
+device: Umluft 230\textdegree
+persons: 4
+
+>1.0 Portion Kuchenteig
+Form belegen
+
+>1.0 EL  Mehl
+>0.2 l Milch
+anrühren
+
+>300.0 g Käse
+dazureiben
+
+>3.0 Ei/Eier
+> wenig Salz
+> Muskat
+> Pfeffer
+> Paprika
+beifügen, gut mischen, kurz vor dem Backen auf den Teigboden geben
+
+(25-30 Minuten
+backen
+

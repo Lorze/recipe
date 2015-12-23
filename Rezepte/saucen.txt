@@ -1,0 +1,15 @@
+[Saucen]
+time: 0.5h
+device: Temperatur oder Pfanne
+persons: 4
+
+>350.0 ml Rahm
+steifschlagen
+
+>2.0 Becher saurer Halbrahm
+>150.0 g Mayonnaise
+> Senf
+> Salz
+> Pfeffer
+vermengen. Die Sauce dient als Basis für verschiedene Varianten.
+

@@ -1,0 +1,33 @@
+[Tessiner Brotkuchen]
+time: 3h
+device: 180\textdegree
+persons: 4
+
+>1.0 l Milch
+>1.0 Vanilleschote/Vanilleschoten
+aufkochen, über
+
+>400.0 g altes Brot
+giessen, einige Stunden zugedeckt stehen lassen, mit der Gabel gut zerdrücken
+
+>2.0 Ei/Eier
+>1.0 Prise Salz
+>200.0 g Zucker
+zu einer Crème schlagen
+
+>1.0 Zitrone/Zitronen
+>1.0 TL  Zimt
+>50.0 g kandierte Früchte
+>50.0 g Sultaninen
+>100.0 g gemahlene Mandeln
+> etwas Bittermandelaroma
+>2.0 EL Kakao
+dazurühren, mit der Brotmasse zu einem gleichmässigen Teig verarbeiten. In eine ausgebutterte Form geben, mit
+
+>2.0 EL Pinienkerne
+> etwas Butter
+bestreuen
+
+(2 Stunden
+backen, etwas auskühlen lassen, aus der Form nehmen, erst am nächsten Tag aufschneiden
+

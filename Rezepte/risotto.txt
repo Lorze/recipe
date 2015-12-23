@@ -1,0 +1,26 @@
+[Risotto]
+time: 0.5h
+device: Pfanne
+persons: 4
+
+>1.0 Zwiebel/Zwiebeln
+hacken
+
+>1.0 EL Öl
+erhitzen, Zwiebel dünsten
+
+>0.333333333333 kg Risottoreis
+mitdünsten
+
+>0.1 l Weisswein
+ablöschen
+
+>1.0 Bouillonwürfel
+würzen
+
+> Wasser
+nach Bedarf zugeben
+
+(20 Minuten
+köcheln lassen
+

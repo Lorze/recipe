@@ -1,0 +1,11 @@
+[Weinbrezeli]
+time: 1h
+device: Brezeleisen
+persons: 1 Portionen
+
+>500.0 ml Weisswein
+>500.0 ml Sauerrahm
+>600.0 g Zucker
+>500.0 g Mehl
+vermengen, etwas ruhen lassen, das Brezeleisen heiss werden lassen, fetten, die Brezeli nach dem Backen rollen
+

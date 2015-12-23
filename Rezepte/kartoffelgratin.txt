@@ -1,0 +1,23 @@
+[Kartoffelgratin]
+time: 1h
+device: Umluft 200\textdegree
+persons: 4
+
+>  Gratinform
+einfetten
+
+>8.0 Kartoffel/Kartoffeln
+waschen, schälen, in Scheiben schneiden, in Gratinform geben
+
+>4.0 Knoblauchzehe/Knoblauchzehen
+schälen, in Scheiben schneiden, zugeben
+
+>1.0 Bouillonwürfel
+in wenig heissem Wasser auflösen
+
+>0.1 l Rahm oder Milch
+zu der Bouillon geben, über die Kartoffeln geben
+
+(30 Minuten
+backen
+

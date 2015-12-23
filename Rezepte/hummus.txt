@@ -1,0 +1,15 @@
+[Hummus]
+time: 0.5h
+device: 
+persons: 4
+
+>2.0 Dose Ceci
+>1.0 Zitrone/Zitronen Saft
+>2.0 Knoblauchzehe/Knoblauchzehen
+>2.0 EL Tahini
+>2.0 EL Olivenöl
+alles zusammen mit dem Mixer fein pürieren
+
+> Wasser
+zugeben, bis gute Konsistenz erreicht
+
