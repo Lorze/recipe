@@ -65,32 +65,8 @@ Allowed variables are:
 
 Everything in an instruction block not matching an ingredient will be added to the instructions. 
 
-## Set Number Of Persons
-persons.txt contains several lines, which determine the factor in which the recipes are to be scaled
 
-### Default Factor
-Factor in which every recipe is scaled, if no specific factor is given. First entry of the file
-
-#### Format
-```
-[persons]factor
-```
-Allowed variables are:
-* **factor** a number
-
-### Specific Factor
-Factor in which one single recipe is scaled.
-
-#### Format
-```
-[title]factor
-```
-Allowed variables are:
-* **title** Title of recipe, title can contain any unicode letters including ',- and whitespaces
-* **factor** a number
-
-## Fixes
-If there is no unit, but the ingredient starts with lowercase, the program will recognize the ingredient as unit. To prevent this, change 
+If there is no unit, but the ingredient starts with lowercase, the program will recognize the ingredient as unit. to prevent this, change 
 >(2) ingredient 
 to 
 >(2) n ingredient 

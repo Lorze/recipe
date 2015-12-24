@@ -1,0 +1,11 @@
+[persons]8
+[Brownies mit Himbeeren]16
+[Bärechöpfli]6
+[Chaitee-Sirup]12
+[Griessglacé]6
+[Napolitanerli]1
+[Rüeblitorte]1
+[Spinatroulade mit Lachsfüllung]30
+
+
+

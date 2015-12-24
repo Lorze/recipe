@@ -14,38 +14,15 @@ class Recipe:
 
 	#set number of persons and scale ingredients
 	def setPersons(self, persons):
-		factor = float(persons) / self.persons
+		if self.persons != 0:
+			factor = float(persons) / self.persons
+		else:
+			factor = 1
 		self.persons = float(persons)
 
 		for instruction in self.instructions:
 			for ingredient in instruction.ingredients:
 				ingredient.scale(factor)
-
-	#set number of persons and scale ingredients according to persons.tex, call after recipe.load!!
-	def setPersons2(self):
-		f = codecs.open('persons.txt', 'r', encoding='utf-8')
-		while True:
-			line = f.readline()
-			line = line.split("#")[0] #discad comments
-
-			if line == '':
-				break
-
-			if  setPersonRegex.match(line) != None:
-				match = setPersonRegex.match(line)
-				if  match != None:
-					if match.group(1) == 'persons':
-						persons = match.group(2).strip()
-					elif match.group(1) == self.title:
-						persons = match.group(2).strip()
-					else :
-						continue
-				continue
-
-			else:
-				continue
-
-		self.setPersons(persons)
 
 	#loads recipe from file
 	def load(self, filename):
@@ -100,10 +77,7 @@ class Recipe:
 
 	#creates valid Latex to use with latex, ig hie schaffe
 	def saveLatex(self, stream):
-		if self.time :
-			stream.write('\\thispagestyle{empty}\n\\section*{%s}\n\\subsection*{Zeit: %s}\n\\subsection*{%s}\n\\subsection*{%s %s}\n' % (self.title, self.time, self.device, fraction(self.persons,True), self.persunit))
-		else :
-			stream.write('\\thispagestyle{empty}\n\\section*{%s}\n\\subsection*{%s}\n\\subsection*{%s}\n\\subsection*{%s %s}\n' % (self.title, self.time, self.device, fraction(self.persons,True), self.persunit))
+		stream.write('\\thispagestyle{empty}\n\\section*{%s}\n\\subsection*{Zeit: %s}\n\\subsection*{%s}\n\\subsection*{%s %s}\n' % (self.title, self.time, self.device, fraction(self.persons,True), self.persunit))
 		stream.write('\\begin{tabular}{R{3cm}L{4.5cm}D{9cm}}\n\\hline\\\\\\\\\n')
 		for instruction in self.instructions:
 			instruction.saveLatex(stream)
@@ -260,7 +234,6 @@ class Form:
 titleRegex = re.compile('\[([\w\s\',-]+)\]', re.UNICODE)
 headerRegex = re.compile('([A-Za-z0-9]+):(.+)', re.UNICODE )
 personRegex = re.compile('([A-Za-z0-9]+):\s*([0-9]+)\s*([A-Za-zäöüÖÄÜ]*)', re.UNICODE )
-setPersonRegex = re.compile('\[([\w\s\',-]+)\]([0-9]+)', re.UNICODE)
 ingredientRegex = re.compile('>\s*([0-9\.-]*)\s*([\w]*)\s+([\w][\w\-:\s,]+)/?([\w\-:\s,]*)$', re.UNICODE)
 timeRegex = re.compile('\(s*([\w\s-]+)', re.UNICODE)
 emptyRegex = re.compile('^\s*$', re.UNICODE)
