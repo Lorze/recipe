@@ -5,6 +5,8 @@ import glob
 import subprocess
 import os
 import codecs
+import re
+
 
 #list of units -> Unit(name in recipe file,
 	#how many times fits the preceding unit in to this one,
@@ -58,18 +60,31 @@ files.sort()
 f = codecs.open('Rezepte.tex','w',encoding='utf8')
 h = codecs.open('Rezepte.toc','w',encoding='utf8')
 form = thomaslib.Form(f)
+compileRegex = re.compile('\[([\w\s\',-]+)\]([0-1])', re.UNICODE)
 
 #open every file, compile, write to tex & toc
 form.tocheader(h)
 var = 2
 form.header(f)
 for name in files:
-	recipe = thomaslib.Recipe(units)
-	recipe.load(name)
-	recipe.setPersons2()
-	recipe.saveLatex(f)
-	recipe.savetoc(h, var)
-	var = var + 1
+	g = codecs.open(name, 'r', encoding='utf-8')
+	while True:
+		line = g.readline()
+		line = line.split("#")[0] #discad comments
+		if line == '':
+			break
+		if  compileRegex.match(line) != None:
+			match = compileRegex.match(line)
+			if match.group(2).strip() != None:
+				recipe = thomaslib.Recipe(units)
+				recipe.load(name)
+				recipe.setPersons2()
+				recipe.saveLatex(f)
+				recipe.savetoc(h, var)
+				var = var + 1
+			continue
+		else:
+			continue
 form.end(f)
 f.close()
 h.close()

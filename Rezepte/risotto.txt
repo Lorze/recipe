@@ -1,4 +1,4 @@
-[Risotto]
+[Risotto]1
 time: 0.5h
 device: Pfanne
 persons: 4
