@@ -6,7 +6,23 @@ import subprocess
 import os
 import codecs
 import re
+import argparse
 
+#allows to open file to match title against setting  in compile.txt. more elegant solution definitely appreciated.
+def openfile(name):
+	f = codecs.open("%s"%(name),'r',encoding='utf-8')
+	line = f.readline()
+	titleRegex = re.compile('\[([\w\s\',-]+)\]', re.UNICODE)
+	match = titleRegex.match(line)
+	title = match.group(1).strip().encode('utf-8')
+	f.close()
+	return title
+
+# adds option -c to sample.py, which will only compile files set in compile.txt. default compiles all
+parser = argparse.ArgumentParser(description='Process some integers.')
+parser.add_argument('-c', default='all')
+args = parser.parse_args()
+print(args.c)
 
 #list of units -> Unit(name in recipe file,
 	#how many times fits the preceding unit in to this one,
@@ -53,7 +69,6 @@ units = [
 	Unit('dl', 10, 10),
 	Unit('l', 10, 0)
 ]
-
 #read all filenames in Rezepte
 files = glob.glob("Rezepte/*txt")   
 files.sort()
@@ -62,29 +77,39 @@ h = codecs.open('Rezepte.toc','w',encoding='utf8')
 form = thomaslib.Form(f)
 compileRegex = re.compile('\[([\w\s\',-]+)\]([0-1])', re.UNICODE)
 
-#open every file, compile, write to tex & toc
+#open every file, compile, write to tex & toc, only for some files, if -c some is selected
 form.tocheader(h)
 var = 2
 form.header(f)
-for name in files:
-	g = codecs.open(name, 'r', encoding='utf-8')
-	while True:
-		line = g.readline()
-		line = line.split("#")[0] #discad comments
-		if line == '':
-			break
-		if  compileRegex.match(line) != None:
+if  args.c=='all':
+	for name in files:
+		recipe = thomaslib.Recipe(units)
+		recipe.load(name)
+		recipe.setPersons2()
+		recipe.saveLatex(f)
+		recipe.savetoc(h, var)
+		var = var + 1
+else:
+	for name in files:
+		g = codecs.open('compile.txt', 'r', encoding='utf-8')
+		while True:
+			line = g.readline()
+			line = line.split("#")[0] #discad comments
 			match = compileRegex.match(line)
-			if match.group(2).strip() != None:
-				recipe = thomaslib.Recipe(units)
-				recipe.load(name)
-				recipe.setPersons2()
-				recipe.saveLatex(f)
-				recipe.savetoc(h, var)
-				var = var + 1
-			continue
-		else:
-			continue
+			if line == '':
+				break
+			if  match != None:
+				if match.group(1).strip().encode('utf-8') == openfile(name):
+					recipe = thomaslib.Recipe(units)
+					recipe.load(name)
+					recipe.setPersons2()
+					recipe.saveLatex(f)
+					recipe.savetoc(h, var)
+					var = var + 1
+					break
+				continue
+			else:
+				continue
 form.end(f)
 f.close()
 h.close()
@@ -102,4 +127,6 @@ os.remove("Rezepte.aux")
 os.remove("Rezepte.log")
 os.remove("Rezepte.tex")
 os.remove("Rezepte.toc")
+
+
 
