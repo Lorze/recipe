@@ -75,7 +75,7 @@ files.sort()
 f = codecs.open('Rezepte.tex','w',encoding='utf8')
 h = codecs.open('Rezepte.toc','w',encoding='utf8')
 form = thomaslib.Form(f)
-compileRegex = re.compile('\[([\w\s\',-]+)\]([0-1])', re.UNICODE)
+compileRegex = re.compile('\[([\w\s\',-]+)\]', re.UNICODE)
 
 #open every file, compile, write to tex & toc, only for some files, if -c some is selected
 form.tocheader(h)
@@ -100,6 +100,7 @@ else:
 				break
 			if  match != None:
 				if match.group(1).strip().encode('utf-8') == openfile(name):
+					print(match.group(1).strip().encode('utf-8'))
 					recipe = thomaslib.Recipe(units)
 					recipe.load(name)
 					recipe.setPersons2()
