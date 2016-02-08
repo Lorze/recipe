@@ -1,3 +1,4 @@
+#!/usr/bin/env python 
 import pyforms
 from   pyforms          import BaseWidget
 from   pyforms.Controls import ControlText
@@ -8,6 +9,7 @@ import codecs
 import glob
 import re
 import sys
+import os
 
 #i think, i have a problem with the encoding on this one, will first have to figure that out before finishing
 class Rezepte(BaseWidget):
@@ -16,7 +18,7 @@ class Rezepte(BaseWidget):
 		super(Rezepte,self).__init__('Rezepte')
 
 #Define the organization of the forms
-		self._formset = ['',('_button','_allbutton','_set',' '),('_newfile','_newbutton', ' '),('_persons',' '),('_openbutton',' '),('_filelist')]
+		self._formset = ['',('_button','_allbutton','_set',' '),('_newfile','_newbutton', ' '),('_persons',' '),('_openbutton',' ','_rebutton'),('_filelist')]
 
 #Definition of the forms fields
 
@@ -28,6 +30,7 @@ class Rezepte(BaseWidget):
 		self._button = ControlButton('Kompilieren')
 		self._set = ControlButton('Speichern')
 		self._allbutton = ControlButton('alle Kompilieren')
+		self._rebutton = ControlButton('reload')
 		self._newbutton = ControlButton('Rezept erstellen')
 		self._openbutton = ControlButton('open')
 		self._filelist = ControlList()
@@ -46,7 +49,7 @@ class Rezepte(BaseWidget):
 		self._openbutton.value = self.__openbuttonAction
 		self._newbutton.value = self.__newbuttonAction
 		self._set.value = self.__setAction
-
+		self._rebutton.value = self.__reAction
 #compiles only some chosen recipes		 
 	def __buttonAction(self):
 		"""Button action event"""
@@ -57,6 +60,11 @@ class Rezepte(BaseWidget):
 	def __setAction(self):
 		"""Button action event"""
 		save(self)
+	
+	def __reAction(self):
+		"""Button action event"""
+		save(self)
+		os.execl(sys.executable, *([sys.executable]+sys.argv)) 
 
 #compiles all recipes
 	def __allbuttonAction(self):
@@ -111,7 +119,7 @@ def save(self):
 	with open('compile.txt', 'w') as file:
 		file.writelines(data)
 	file.close()
-	
+		
 #reads persons.txt, where person settings are saved
 def personnr(title):
 	f = codecs.open('persons.txt', 'r', encoding='utf-8')

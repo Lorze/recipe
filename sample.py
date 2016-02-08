@@ -22,7 +22,6 @@ def openfile(name):
 parser = argparse.ArgumentParser(description='Process some integers.')
 parser.add_argument('-c', default='all')
 args = parser.parse_args()
-print(args.c)
 
 #list of units -> Unit(name in recipe file,
 	#how many times fits the preceding unit in to this one,
@@ -30,16 +29,16 @@ print(args.c)
 	#name to display (optional)
 	#fraciton)
 units = [
-	Unit('Portion', 0, 1,'Portion',True),
+	Unit('Portion', 0, 1.1,'Portion',True),
 	Unit('Portionen', 1, 0,'Portionen',True),
 
-	Unit('Glas', 0, 1,'Glas',True),
+	Unit('Glas', 0, 1.1,'Glas',True),
 	Unit('Gläser', 1, 0,'Gläser',True),
 
-	Unit('Dose', 0, 1,'Dose',True),
+	Unit('Dose', 0, 1.1,'Dose',True),
 	Unit('Dosen', 1, 0,'Dosen',True),
 
-	Unit('Zweig', 0, 1,'Zweig',True),
+	Unit('Zweig', 0, 1.1,'Zweig',True),
 	Unit('Zweige', 1, 0,'Zweige',True),
 
 	Unit('cm', 0, 1000),
@@ -53,20 +52,19 @@ units = [
 
 	Unit('Bund', 0, 0,'Bund',True),
 
-	Unit('Prise', 0, 1,'Prise',True),
+	Unit('Prise', 0, 1.1,'Prise',True),
 	Unit('Prisen', 1, 3,'Prisen',True),
 	Unit('TL', 8, 3,'TL',True),
 	Unit('EL', 3, 3,'EL',True),
-	Unit('g', 0.1, 1000),
-	Unit('kg', 1000, 1000),
+	Unit('g', 0.1, 999),
+	Unit('kg', 1000, 999),
 	Unit('t', 1000, 0),
 
 	Unit('Tropfen', 0, 3,'Tropfen',True),
 	Unit('TLL', 10, 3, 'TL',True),
 	Unit('ELL', 3, 3, 'EL',True),
-	Unit('ml', 0.1, 10),
-	Unit('cl', 10, 10),
-	Unit('dl', 10, 10),
+	Unit('ml', 0.1, 99),
+	Unit('dl', 100, 10),
 	Unit('l', 10, 0)
 ]
 #read all filenames in Rezepte

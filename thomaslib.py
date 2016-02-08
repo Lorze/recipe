@@ -305,9 +305,10 @@ def fraction(a,frac):
 	else:
 		if frac:
 			output = float2str(c)
+
 		else:
-			exp = int(math.log10(a))
-			a = math.pow(10,exp)*round(a*math.pow(10,-exp),1)
+			exp = int(math.log10(a))-1
+			a = round(a*2,-exp)/2
 			if a == int(a):
 				output = float2str(int(a))
 			else :

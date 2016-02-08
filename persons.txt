@@ -1,7 +1,8 @@
-[persons]4
+[persons]8
 [Bärechöpfli]6
 [Chaitee-Sirup]12
 [Griessglacé]6
 [Napolitanerli]1
 [Rüeblitorte]1
 [Spinatroulade mit Lachsfüllung]30
+[Yorkshire Pudding]12
