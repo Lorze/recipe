@@ -103,7 +103,7 @@ else:
 					recipe.load(name)
 					recipe.setPersons2()
 					recipe.saveLatex(f)
-					recipe.savetoc(h, var)
+					#recipe.savetoc(h, var)
 					var = var + 1
 					break
 				continue
@@ -114,6 +114,7 @@ f.close()
 h.close()
 # run latex; maybe implement here for other OS than linux 
 if sys.platform == 'linux' :
+	subprocess.call(["pdflatex", "Rezepte.tex"])
 	subprocess.call(["pdflatex", "Rezepte.tex"])
 	subprocess.call(["xdg-open", "Rezepte.pdf"])
 elif sys.platform == 'win32':
@@ -126,6 +127,7 @@ os.remove("Rezepte.aux")
 os.remove("Rezepte.log")
 os.remove("Rezepte.tex")
 os.remove("Rezepte.toc")
+os.remove("Rezepte.out")
 
 
 

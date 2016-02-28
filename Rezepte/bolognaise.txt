@@ -9,7 +9,7 @@ hacken
 >1.0 EL Öl
 erhitzen, Zwiebeln dünsten
 
->500.0 g Rindshack
+>500 g Rindshack
 zugeben, braten bis schön braun
 
 >800.0 g Stangensellerie

@@ -1,4 +1,5 @@
 [persons]8
+[Brownies mit Himbeeren]16
 [Bärechöpfli]6
 [Chaitee-Sirup]12
 [Griessglacé]6

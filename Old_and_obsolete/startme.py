@@ -41,7 +41,7 @@ class Rezepte(BaseWidget):
 			persons = personnr(title)
 			comp = compil(title)
 			self.sumtitle.append(title)
-			self._filelist += [title, persons, comp,'']
+			self._filelist += [title, persons, comp]
 			
 #Define the button action
 		self._button.value = self.__buttonAction

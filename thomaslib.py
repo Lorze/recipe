@@ -101,9 +101,9 @@ class Recipe:
 	#creates valid Latex to use with latex, ig hie schaffe
 	def saveLatex(self, stream):
 		if self.time :
-			stream.write('\\thispagestyle{empty}\n\\section*{%s}\n\\subsection*{Zeit: %s}\n\\subsection*{%s}\n\\subsection*{%s %s}\n' % (self.title, self.time, self.device, fraction(self.persons,True), self.persunit))
+			stream.write('\\thispagestyle{empty}\n\\section*{\\hyperlink{MyToc}{%s}}\n\\addtocontents{toc}{\\protect\\thispagestyle{empty}}\\addcontentsline{toc}{section}{%s \\textit{%s}}\n\\subsection*{Zeit: %s}\n\\subsection*{%s}\n\\subsection*{%s %s}\n' % (self.title,self.title, self.time, self.time, self.device, fraction(self.persons,True), self.persunit))
 		else :
-			stream.write('\\thispagestyle{empty}\n\\section*{%s}\n\\subsection*{%s}\n\\subsection*{%s}\n\\subsection*{%s %s}\n' % (self.title, self.time, self.device, fraction(self.persons,True), self.persunit))
+			stream.write('\\thispagestyle{empty}\n\\section*{\\hyperlink{MyToc}{%s}}\n\\addtocontents{toc}{\\protect\\thispagestyle{empty}}\\addcontentsline{toc}{section}{%s \\textit{%s}}\n\\subsection*{%s}\n\\subsection*{%s}\n\\subsection*{%s %s}\n' % (self.title,self.title, self.time,self.time, self.device, fraction(self.persons,True), self.persunit))
 		stream.write('\\begin{tabular}{R{3cm}L{4.5cm}D{9cm}}\n\\hline\\\\\\\\\n')
 		for instruction in self.instructions:
 			instruction.saveLatex(stream)
@@ -111,7 +111,8 @@ class Recipe:
 
 	#creates toc entry
 	def savetoc(self, stream, var):
-		stream.write('\\contentsline {section}{%s\\hfill \\textit {%s}\\hspace {35pt}}{%s}'%(self.title,self.time,var))
+		stream.write('\\contentsline {section}{\\numberline {}%s}{%s}{section.%s}\n'%(self.title,self.time,var))
+			
 		
 
 class Instruction:
@@ -245,7 +246,9 @@ class Form:
 			+'\\newcolumntype{L}[1]{>{\\raggedright\\let\\newline\\\\\\arraybackslash\\hspace{0pt}}b{#1}}\n'
 			+'\\newcolumntype{D}[1]{>{\\raggedright\\let\\newline\\\\\\arraybackslash\\hspace{0pt}}p{#1}}\n'
 			+'\\newcolumntype{R}[1]{>{\\raggedleft\\let\\newline\\\\\\arraybackslash\\hspace{0pt}}b{#1}}\n'
+			+'\\cftpagenumbersoff{section}'
 			+'\\usepackage[paper=a4paper,left=16mm,right=16mm,top=20mm,bottom=20mm]{geometry}\n'
+			+'\\usepackage[colorlinks, pdfpagelabels, pdfstartview = FitH,bookmarksopen = true, bookmarksnumbered = true, linkcolor = black, plainpages = false, citecolor = black]{hyperref}\n'
 			+'\\begin{document}\n'
 			+'\\tableofcontents\n'
 			+'\\clearpage\n')
@@ -254,7 +257,7 @@ class Form:
 		stream.write('\\end{document}\n')
 
 	def tocheader(self, stream):
-		stream.write('\\cftpagenumbersoff {section}\\cftpagenumbersoff {subsubsection}\\select@language {ngerman}')
+		stream.write('\\select@language {ngerman}\n')
 
 #regex expression for parsing
 titleRegex = re.compile('\[([\w\s\',-]+)\]', re.UNICODE)
